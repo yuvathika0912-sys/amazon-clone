@@ -1,0 +1,310 @@
+
+/* =================================
+   AMAZON-STYLE HOME PAGE
+================================= */
+
+.homeProducts {
+  width: 96%;
+  max-width: 1600px;
+  margin: 20px auto 50px;
+
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 18px;
+
+  align-items: stretch;
+}
+
+/* =================================
+   SORT BAR
+================================= */
+
+.sortBar {
+  width: 96%;
+  max-width: 1600px;
+  margin: 22px auto 16px;
+  padding: 14px 18px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+
+  background: #ffffff;
+  border: 1px solid #e3e6e6;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.sortBar h3 {
+  margin: 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #0f1111;
+}
+
+.sortBar select {
+  width: 240px;
+  min-height: 40px;
+  padding: 0 12px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #0f1111;
+
+  background: #f0f2f2;
+  border: 1px solid #adb1b8;
+  border-radius: 8px;
+
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sortBar select:hover {
+  background: #e3e6e6;
+  border-color: #888c8c;
+}
+
+.sortBar select:focus-visible {
+  outline: 2px solid #007185;
+  outline-offset: 2px;
+}
+
+/* =================================
+   ACTIVE SEARCH / CATEGORY FILTERS
+================================= */
+
+.activeFilters {
+  width: 96%;
+  max-width: 1600px;
+  margin: 0 auto 18px;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #0f1111;
+}
+
+.activeFilters span {
+  padding: 8px 12px;
+  background: #f0f2f2;
+  border: 1px solid #d5d9d9;
+  border-radius: 4px;
+}
+
+.activeFilters button {
+  padding: 8px 13px;
+
+  color: #0f1111;
+  background: #ffd814;
+  border: 1px solid #fcd200;
+  border-radius: 20px;
+
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+.activeFilters button:hover {
+  background: #f7ca00;
+}
+
+/* =================================
+   LOADING
+================================= */
+
+.loadingContainer {
+  min-height: 55vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.loading {
+  margin: 0;
+  text-align: center;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: #232f3e;
+}
+
+.loading::after {
+  content: "...";
+  animation: loadingDots 1.2s infinite;
+}
+
+@keyframes loadingDots {
+  0%,
+  20% {
+    content: ".";
+  }
+
+  40% {
+    content: "..";
+  }
+
+  60%,
+  100% {
+    content: "...";
+  }
+}
+
+/* =================================
+   NO PRODUCTS / ERROR MESSAGE
+================================= */
+
+.noProducts {
+  grid-column: 1 / -1;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 50px auto;
+  padding: 35px 20px;
+
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #565959;
+
+  background: #ffffff;
+  border: 1px solid #e3e6e6;
+  border-radius: 6px;
+}
+
+.noProducts button {
+  margin-top: 12px;
+  padding: 10px 22px;
+
+  background: #ffd814;
+  color: #0f1111;
+
+  border: 1px solid #fcd200;
+  border-radius: 20px;
+
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.noProducts button:hover {
+  background: #f7ca00;
+}
+
+/* =================================
+   LARGE LAPTOP
+================================= */
+
+@media (max-width: 1200px) {
+  .homeProducts {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+  }
+}
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 900px) {
+  .homeProducts {
+    width: 95%;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .sortBar,
+  .activeFilters {
+    width: 95%;
+  }
+
+  .sortBar h3 {
+    font-size: 18px;
+  }
+
+  .sortBar select {
+    width: 220px;
+  }
+}
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+  .homeProducts {
+    width: 94%;
+    margin: 14px auto 30px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .sortBar {
+    width: 94%;
+    margin: 15px auto 12px;
+    padding: 12px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .sortBar h3 {
+    font-size: 17px;
+  }
+
+  .sortBar select {
+    width: 100%;
+    min-height: 38px;
+    font-size: 13px;
+  }
+
+  .activeFilters {
+    width: 94%;
+    gap: 7px;
+    font-size: 12px;
+  }
+
+  .activeFilters span {
+    padding: 7px 9px;
+  }
+
+  .activeFilters button {
+    padding: 7px 10px;
+    font-size: 12px;
+  }
+
+  .loading {
+    font-size: 23px;
+  }
+
+  .noProducts {
+    padding: 25px 12px;
+    font-size: 18px;
+  }
+}
+
+/* =================================
+   SMALL MOBILE
+================================= */
+
+@media (max-width: 360px) {
+  .homeProducts {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .sortBar h3 {
+    font-size: 16px;
+  }
+}

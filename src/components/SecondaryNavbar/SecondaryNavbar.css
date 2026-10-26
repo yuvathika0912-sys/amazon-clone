@@ -1,0 +1,18 @@
+.secondaryNavbar {
+  height: 40px;
+  background: #232f3e;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 20px;
+  font-size: 14px;
+}
+
+.secondaryNavbar span {
+  cursor: pointer;
+}
+
+.secondaryNavbar span:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,469 @@
+
+/* ==================================
+   AMAZON-STYLE PAYMENT PAGE
+================================== */
+
+.paymentPage {
+  min-height: 80vh;
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(300px, 0.85fr);
+  align-items: start;
+  justify-content: center;
+  gap: 25px;
+  width: 94%;
+  max-width: 1200px;
+  margin: 30px auto 50px;
+  padding: 20px 0;
+  box-sizing: border-box;
+  background: #f3f3f3;
+  color: #0f1111;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ==================================
+   PAYMENT CARD
+================================== */
+
+.paymentBox,
+.paymentTotal {
+  min-width: 0;
+  background: #ffffff;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  padding: 28px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 5px rgba(15, 17, 17, 0.08);
+}
+
+.paymentBox h1 {
+  margin: 0 0 12px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #e7e7e7;
+  color: #0f1111;
+  font-size: 27px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.paymentSubtitle {
+  margin: 0 0 25px;
+  color: #565959;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ==================================
+   PAYMENT METHOD OPTIONS
+================================== */
+
+.paymentBox label.paymentOption {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 17px;
+  margin-bottom: 14px;
+  border: 1px solid #d5d9d9;
+  border-radius: 7px;
+  background: #ffffff;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.paymentBox label.paymentOption:hover {
+  border-color: #a6a6a6;
+  background: #fafafa;
+}
+
+.paymentBox label.paymentOption.selected {
+  border-color: #007185;
+  background: #f0fafa;
+  box-shadow: 0 0 0 1px #007185;
+}
+
+.paymentOption input[type="radio"] {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  margin: 0;
+  accent-color: #007185;
+  cursor: pointer;
+}
+
+.paymentIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #f3f3f3;
+  font-size: 21px;
+}
+
+.paymentOptionText {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.paymentOptionText strong {
+  color: #0f1111;
+  font-size: 15px;
+}
+
+.paymentOptionText small {
+  color: #565959;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* ==================================
+   FORM LABELS
+================================== */
+
+.paymentBox .paymentInputGroup label,
+.paymentBox .cardDetails > label,
+.paymentBox .cardRow label {
+  display: block;
+  padding: 0;
+  margin: 14px 0 7px;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  color: #0f1111;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: default;
+}
+
+/* ==================================
+   UPI AND CARD INPUTS
+================================== */
+
+.paymentBox input.paymentInput {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 43px;
+  box-sizing: border-box;
+  padding: 11px 12px;
+  margin: 0 0 15px;
+  border: 1px solid #888c8c;
+  border-radius: 5px;
+  background: #ffffff;
+  color: #0f1111;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.paymentBox input.paymentInput::placeholder {
+  color: #777777;
+}
+
+.paymentBox input.paymentInput:focus {
+  border-color: #007185;
+  box-shadow: 0 0 0 3px rgba(0, 113, 133, 0.14);
+}
+
+.cardDetails {
+  padding: 3px 0 10px;
+}
+
+.cardRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.cardRow > div {
+  min-width: 0;
+}
+
+/* ==================================
+   PAYMENT SECURITY NOTE
+================================== */
+
+.paymentSecurityNote {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 13px;
+  margin: 20px 0;
+  border: 1px solid #e7e7e7;
+  border-radius: 6px;
+  background: #fafafa;
+  color: #565959;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* ==================================
+   BACK TO CHECKOUT LINK
+================================== */
+
+.backCheckoutLink {
+  display: inline-block;
+  margin-top: 8px;
+  color: #007185;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.backCheckoutLink:hover {
+  color: #c45500;
+  text-decoration: underline;
+}
+
+/* ==================================
+   ORDER SUMMARY
+================================== */
+
+.paymentTotal {
+  position: sticky;
+  top: 90px;
+  height: fit-content;
+}
+
+.paymentTotal h2 {
+  margin: 0 0 22px;
+  padding-bottom: 17px;
+  border-bottom: 1px solid #e7e7e7;
+  color: #0f1111;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.paymentRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+  margin: 17px 0;
+  color: #0f1111;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.paymentRow > span:first-child {
+  flex: 1;
+}
+
+.paymentRow > span:last-child,
+.paymentRow > strong {
+  text-align: right;
+  overflow-wrap: anywhere;
+  font-weight: 500;
+}
+
+.paymentRow.discountRow > span:last-child,
+.freeText {
+  color: #067d62 !important;
+  font-weight: 600;
+}
+
+.paymentTotal hr {
+  margin: 22px 0;
+  border: none;
+  border-top: 1px solid #d5d9d9;
+}
+
+/* ==================================
+   FINAL AMOUNT
+================================== */
+
+.finalAmount {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 20px 0;
+  color: #b12704;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.finalAmount span {
+  flex: 1;
+}
+
+.finalAmount strong {
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+/* ==================================
+   PLACE ORDER / PAY BUTTON
+================================== */
+
+.paymentTotal button.payBtn {
+  display: block;
+  width: 100%;
+  min-height: 46px;
+  box-sizing: border-box;
+  padding: 13px 18px;
+  margin-top: 20px;
+  border: 1px solid #fcd200;
+  border-radius: 25px;
+  background: #ffd814;
+  color: #0f1111;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.paymentTotal button.payBtn:hover {
+  background: #f7ca00;
+  box-shadow: 0 2px 5px rgba(15, 17, 17, 0.15);
+}
+
+.paymentTotal button.payBtn:focus-visible {
+  outline: 3px solid #007185;
+  outline-offset: 3px;
+}
+
+.paymentTotal button.payBtn:disabled {
+  background: #f3e5a0;
+  border-color: #e6d58c;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.paymentFootnote {
+  margin: 15px 0 0;
+  color: #565959;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* ==================================
+   EMPTY CART
+================================== */
+
+.paymentBox.emptyPayment {
+  grid-column: 1 / -1;
+  width: 100%;
+  max-width: 650px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.paymentBox.emptyPayment h1 {
+  text-align: center;
+}
+
+.paymentBox.emptyPayment p {
+  color: #565959;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ==================================
+   TABLET RESPONSIVE
+================================== */
+
+@media (max-width: 850px) {
+  .paymentPage {
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 0.8fr);
+    gap: 16px;
+  }
+
+  .paymentBox,
+  .paymentTotal {
+    padding: 21px;
+  }
+
+  .paymentBox h1 {
+    font-size: 23px;
+  }
+
+  .paymentTotal h2 {
+    font-size: 20px;
+  }
+}
+
+/* ==================================
+   MOBILE RESPONSIVE
+================================== */
+
+@media (max-width: 680px) {
+  .paymentPage {
+    width: 92%;
+    min-height: auto;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+    margin: 18px auto 35px;
+    padding: 0;
+  }
+
+  .paymentBox,
+  .paymentTotal {
+    width: 100%;
+    min-width: 0;
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .paymentTotal {
+    position: static;
+  }
+
+  .paymentBox h1 {
+    font-size: 23px;
+  }
+
+  .paymentTotal h2 {
+    font-size: 20px;
+  }
+
+  .cardRow {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+}
+
+/* ==================================
+   SMALL MOBILE
+================================== */
+
+@media (max-width: 380px) {
+  .paymentPage {
+    width: 94%;
+  }
+
+  .paymentBox,
+  .paymentTotal {
+    padding: 15px;
+  }
+
+  .paymentBox h1 {
+    font-size: 21px;
+  }
+
+  .paymentRow {
+    gap: 8px;
+    font-size: 13px;
+  }
+
+  .finalAmount {
+    font-size: 17px;
+  }
+
+  .paymentIcon {
+    width: 34px;
+    height: 34px;
+    font-size: 18px;
+  }
+}

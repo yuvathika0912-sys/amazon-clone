@@ -1,0 +1,335 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* ===========================
+        NAVBAR
+=========================== */
+
+.navbar{
+    width:100%;
+    height:60px;
+    background:#131921;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 18px;
+    gap:15px;
+    color:#fff;
+}
+
+/* ===========================
+        LOGO
+=========================== */
+
+.navbar__logo{
+    text-decoration:none;
+    color:#fff;
+    padding:8px;
+    border:1px solid transparent;
+    transition:.3s;
+}
+
+.navbar__logo:hover{
+    border:1px solid #fff;
+}
+
+.navbar__logo h2{
+    font-size:32px;
+    font-weight:700;
+    letter-spacing:.5px;
+}
+
+/* ===========================
+      DELIVERY
+=========================== */
+
+.navbar__location{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:8px;
+    border:1px solid transparent;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.navbar__location:hover{
+    border:1px solid #fff;
+}
+
+.locationIcon{
+    font-size:22px;
+    color:#fff;
+}
+
+.locationText{
+    display:flex;
+    flex-direction:column;
+}
+
+.locationText small{
+    font-size:11px;
+    color:#ccc;
+}
+
+.locationText select{
+    background:transparent;
+    color:#fff;
+    border:none;
+    outline:none;
+    font-size:14px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.locationText select option{
+    color:#000;
+}
+
+/* ===========================
+        SEARCH
+=========================== */
+
+.navbar__search{
+    flex:1;
+    display:flex;
+    align-items:center;
+    max-width:760px;
+    height:42px;
+    border-radius:6px;
+    overflow:hidden;
+}
+
+.navbar__search select{
+    width:70px;
+    height:100%;
+    border:none;
+    outline:none;
+    background:#f3f3f3;
+    padding-left:8px;
+    cursor:pointer;
+}
+
+.navbar__search input{
+    flex:1;
+    height:100%;
+    border:none;
+    outline:none;
+    padding:0 15px;
+    font-size:15px;
+}
+
+.navbar__search button{
+    width:55px;
+    height:100%;
+    border:none;
+    background:#febd69;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.navbar__search button:hover{
+    background:#f3a847;
+}
+
+/* ===========================
+        LINKS
+=========================== */
+
+.menuLink,
+.cartLink,
+.wishlistLink{
+    text-decoration:none;
+    color:#fff;
+}
+
+/* ===========================
+        MENU
+=========================== */
+
+.menuItem{
+    padding:8px;
+    border:1px solid transparent;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.menuItem:hover{
+    border:1px solid #fff;
+}
+
+.menuItem span{
+    display:block;
+    font-size:12px;
+}
+
+.menuItem h4{
+    font-size:14px;
+    font-weight:700;
+}
+
+/* ===========================
+        WISHLIST
+=========================== */
+
+.wishlist{
+    width:45px;
+    height:45px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    font-size:24px;
+    border:1px solid transparent;
+    transition:.3s;
+}
+
+.wishlist:hover{
+    border:1px solid #fff;
+}
+
+.wishlistCount{
+    position:absolute;
+    top:2px;
+    right:2px;
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    background:#ff9900;
+    color:#111;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:11px;
+    font-weight:bold;
+}
+
+/* ===========================
+        CART
+=========================== */
+
+.cart{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    position:relative;
+    padding:8px;
+    border:1px solid transparent;
+    transition:.3s;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.cart:hover{
+    border:1px solid #fff;
+}
+
+.cartCount{
+    position:absolute;
+    top:-5px;
+    left:12px;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background:#ff9900;
+    color:#111;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:11px;
+    font-weight:bold;
+}
+
+/* ===========================
+      RESPONSIVE
+=========================== */
+
+@media(max-width:1100px){
+
+    .navbar{
+        flex-wrap:wrap;
+        height:auto;
+        padding:15px;
+    }
+
+    .navbar__location{
+        display:none;
+    }
+
+    .navbar__search{
+        order:5;
+        width:100%;
+        max-width:100%;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .navbar{
+        gap:10px;
+    }
+
+    .navbar__logo h2{
+        font-size:24px;
+    }
+
+    .menuItem{
+        display:none;
+    }
+
+    .cart span:not(.cartCount){
+        display:none;
+    }
+
+    .wishlist,
+    .cart{
+        width:40px;
+        height:40px;
+        font-size:20px;
+    }
+
+    .navbar__search{
+        height:40px;
+    }
+
+    .navbar__search select{
+        width:60px;
+        font-size:12px;
+    }
+
+    .navbar__search input{
+        font-size:14px;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .navbar{
+        padding:10px;
+    }
+
+    .navbar__logo h2{
+        font-size:20px;
+    }
+
+    .wishlist,
+    .cart{
+        width:36px;
+        height:36px;
+        font-size:18px;
+    }
+
+    .wishlistCount,
+    .cartCount{
+        width:16px;
+        height:16px;
+        font-size:10px;
+    }
+
+}

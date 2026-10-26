@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.loginPage {
+  min-height: 100vh;
+  background: #f3f3f3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.loginBox {
+  width: 380px;
+  background: white;
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.loginBox h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #232f3e;
+}
+
+.inputGroup {
+  margin-bottom: 18px;
+}
+
+.inputGroup label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #232f3e;
+}
+
+.inputGroup input {
+  width: 100%;
+  height: 45px;
+  padding: 0 15px;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.inputGroup input:focus {
+  outline: none;
+  border-color: #ff9900;
+  box-shadow: 0 0 5px rgba(255,153,0,0.3);
+}
+
+.loginBtn {
+  width: 100%;
+  height: 46px;
+  border: none;
+  border-radius: 8px;
+  background: #ff9900;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.loginBtn:hover {
+  background: #e68a00;
+}
+
+.divider {
+  margin: 25px 0;
+  text-align: center;
+  position: relative;
+}
+
+.divider::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  background: #ddd;
+}
+
+.divider span {
+  position: relative;
+  background: white;
+  padding: 0 15px;
+  color: #666;
+  font-size: 14px;
+}
+
+.createAccountBtn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  background: #ffffff;
+  border: 1px solid #d5d9d9;
+  color: #111;
+  padding: 12px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.createAccountBtn:hover {
+  background: #f7f7f7;
+}
+
+@media (max-width: 480px) {
+  .loginBox {
+    width: 100%;
+    padding: 25px;
+  }
+}

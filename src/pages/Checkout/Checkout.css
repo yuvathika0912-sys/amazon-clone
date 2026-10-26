@@ -1,0 +1,343 @@
+
+/* ===== Checkout Page ===== */
+
+.checkoutPage {
+  width: 95%;
+  max-width: 1400px;
+  margin: 30px auto 50px;
+  display: flex;
+  gap: 25px;
+  align-items: flex-start;
+  justify-content: center;
+  color: #0f1111;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== Shipping Address & Order Summary Cards ===== */
+
+.addressBox,
+.summaryBox {
+  background: #ffffff;
+  padding: 28px;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(15, 17, 17, 0.08);
+  box-sizing: border-box;
+}
+
+.addressBox {
+  flex: 1.8;
+  min-width: 0;
+}
+
+.summaryBox {
+  flex: 1;
+  min-width: 300px;
+  height: fit-content;
+  position: sticky;
+  top: 90px;
+}
+
+/* ===== Headings ===== */
+
+.addressBox h1,
+.summaryBox h1 {
+  color: #0f1111;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 25px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.addressBox h2,
+.summaryBox h2 {
+  color: #0f1111;
+  font-size: 21px;
+  font-weight: 700;
+  margin: 0 0 22px;
+}
+
+.addressBox h2 {
+  margin-top: 5px;
+}
+
+/* ===== Form Labels ===== */
+
+.addressBox label {
+  display: block;
+  color: #0f1111;
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0 0 7px;
+}
+
+/* ===== Form Inputs ===== */
+
+.addressBox input,
+.addressBox textarea {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 0 20px;
+  padding: 12px 13px;
+  border: 1px solid #888c8c;
+  border-radius: 5px;
+  background: #ffffff;
+  color: #0f1111;
+  font-family: inherit;
+  font-size: 15px;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.addressBox input {
+  min-height: 44px;
+}
+
+.addressBox textarea {
+  min-height: 105px;
+  resize: vertical;
+}
+
+.addressBox input::placeholder,
+.addressBox textarea::placeholder {
+  color: #777777;
+}
+
+.addressBox input:focus,
+.addressBox textarea:focus {
+  border-color: #007185;
+  box-shadow: 0 0 0 3px rgba(0, 113, 133, 0.15);
+}
+
+/* ===== Continue Shopping Link ===== */
+
+.backShoppingLink {
+  display: inline-block;
+  margin-top: 8px;
+  color: #007185;
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.backShoppingLink:hover {
+  color: #c45500;
+  text-decoration: underline;
+}
+
+/* ===== Order Summary ===== */
+
+.summaryBox h2 {
+  padding-bottom: 17px;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+  margin: 17px 0;
+  color: #0f1111;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.summaryRow span:first-child {
+  flex: 1;
+}
+
+.summaryRow span:last-child {
+  text-align: right;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.freeText {
+  color: #067d62 !important;
+  font-weight: 600 !important;
+}
+
+.summaryBox hr {
+  border: none;
+  border-top: 1px solid #d5d9d9;
+  margin: 22px 0;
+}
+
+/* ===== Grand Total ===== */
+
+.grandTotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0;
+  padding-top: 5px;
+  color: #b12704;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.grandTotal span {
+  flex: 1;
+}
+
+.grandTotal strong {
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+/* ===== Payment Button ===== */
+
+.summaryBox button.paymentBtn {
+  display: block;
+  width: 100%;
+  min-height: 46px;
+  margin-top: 20px;
+  padding: 13px 18px;
+  border: 1px solid #fcd200;
+  border-radius: 25px;
+  background: #ffd814;
+  color: #0f1111;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.summaryBox button.paymentBtn:hover {
+  background: #f7ca00;
+  box-shadow: 0 2px 5px rgba(15, 17, 17, 0.15);
+}
+
+.summaryBox button.paymentBtn:focus-visible {
+  outline: 3px solid #007185;
+  outline-offset: 3px;
+}
+
+.summaryBox button.paymentBtn:disabled {
+  background: #f3e5a0;
+  border-color: #e6d58c;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ===== Checkout Note ===== */
+
+.checkoutNote {
+  margin: 15px 0 0 !important;
+  color: #565959;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* ===== Empty Cart Summary ===== */
+
+.checkoutPage .summaryBox:has(> h1) {
+  flex: 1;
+  text-align: center;
+  margin: 30px auto;
+  max-width: 650px;
+}
+
+.checkoutPage .summaryBox > p {
+  color: #565959;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* ===== Tablet ===== */
+
+@media (max-width: 900px) {
+  .checkoutPage {
+    width: 94%;
+    gap: 18px;
+  }
+
+  .addressBox,
+  .summaryBox {
+    padding: 22px;
+  }
+
+  .addressBox {
+    flex: 1.3;
+  }
+
+  .summaryBox {
+    min-width: 270px;
+  }
+}
+
+/* ===== Mobile ===== */
+
+@media (max-width: 680px) {
+  .checkoutPage {
+    width: 92%;
+    margin: 20px auto 35px;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .addressBox,
+  .summaryBox {
+    width: 100%;
+    min-width: 0;
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .summaryBox {
+    position: static;
+  }
+
+  .addressBox h1,
+  .summaryBox h1 {
+    font-size: 24px;
+  }
+
+  .addressBox h2,
+  .summaryBox h2 {
+    font-size: 19px;
+  }
+
+  .summaryRow {
+    font-size: 14px;
+  }
+
+  .grandTotal {
+    font-size: 18px;
+  }
+}
+
+/* ===== Small Mobile ===== */
+
+@media (max-width: 380px) {
+  .checkoutPage {
+    width: 94%;
+  }
+
+  .addressBox,
+  .summaryBox {
+    padding: 15px;
+  }
+
+  .addressBox h1,
+  .summaryBox h1 {
+    font-size: 22px;
+  }
+
+  .summaryRow {
+    gap: 8px;
+    font-size: 13px;
+  }
+
+  .grandTotal {
+    font-size: 16px;
+  }
+}
